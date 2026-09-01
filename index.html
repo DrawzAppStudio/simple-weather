@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="/simple-weather/icon-192.png">
 <title>Simple Weather</title>
 <style>
-:root{color-scheme:dark;--bg:#08111f;--card:#111c2e;--card2:#16243a;--line:#263a55;--text:#eef6ff;--muted:#a7b6c8;--blue:#58c7ff;--green:#7ee787;--red:#ff8798}*{box-sizing:border-box}body{margin:0;background:linear-gradient(#07101c,var(--bg));color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}.app{max-width:900px;margin:auto;padding:18px 14px 40px}header,.row{display:flex;align-items:center;justify-content:space-between;gap:12px}h1{font-size:1.55rem;margin:0}h2{font-size:1.05rem;margin:0}.muted{color:var(--muted);font-size:.86rem}.search,.panel,.install-panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-top:14px}.install-panel{border-color:#3c6d8b;background:linear-gradient(135deg,#10243a,#0d1b2d)}.install-title{font-weight:900;font-size:1.05rem}.install-copy{color:var(--muted);font-size:.84rem;margin-top:4px;line-height:1.4}.install-button{width:100%;margin-top:10px;background:var(--blue);color:#04111a;font-weight:900;font-size:1rem;padding:14px}.install-button:disabled{opacity:.55}.install-help{display:none;margin-top:10px;padding:10px;border-radius:12px;background:#0a1524;border:1px solid var(--line);font-size:.82rem;line-height:1.45}.search{display:grid;grid-template-columns:1fr auto;gap:10px}input,button{font:inherit;border-radius:12px}input{min-width:0;background:#091421;color:var(--text);border:1px solid var(--line);padding:13px 14px;outline:none}input:focus{border-color:var(--blue)}button{border:0;background:var(--blue);color:#04111a;font-weight:800;padding:12px 14px}.secondary,.chip{background:var(--card2);color:var(--text);border:1px solid var(--line)}.remove{background:#4a1f28;color:#ffd9df;border:1px solid #7f3442}.results{grid-column:1/-1;display:none;background:#0a1524;border:1px solid var(--line);border-radius:12px;overflow:hidden}.result{display:block;width:100%;text-align:left;border-radius:0;background:transparent;color:var(--text);border-bottom:1px solid var(--line)}.result:last-child{border-bottom:0}.saved{display:flex;gap:8px;overflow-x:auto;margin-top:8px}.chip{flex:0 0 auto}.hidden{display:none!important}.status{color:var(--muted);min-height:1.3em;margin-top:12px}.location{font-size:1.3rem;font-weight:900}.current{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.now{display:flex;align-items:center;gap:12px}.icon{font-size:3rem}.temp{font-size:2.4rem;font-weight:900;line-height:1}.condition{font-weight:800;margin-top:5px}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric,.hour,.day{background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:10px}.metric b{display:block}.metric span{font-size:.78rem;color:var(--muted)}.alerts .alert{background:#351a20;border:1px solid #7c3342;border-radius:13px;padding:11px;margin-top:9px}.alert b{color:#ffd7de}.alert p{font-size:.88rem;line-height:1.35}.good{color:var(--green);font-weight:800}.hourly{display:flex;gap:9px;overflow-x:auto;padding-bottom:5px}.hour{min-width:118px}.hour .wi{font-size:1.7rem;margin:5px 0}.small{font-size:.76rem;color:var(--muted);line-height:1.4}.days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.day{text-align:center}.day .wi{font-size:1.8rem;margin:5px 0}.note{font-size:.76rem;color:var(--muted);line-height:1.4;margin-top:9px}.footer{text-align:center;margin-top:16px}@media(max-width:680px){.current{grid-template-columns:1fr}.days{grid-template-columns:1fr}.day{display:grid;grid-template-columns:65px 50px 1fr 1fr;align-items:center;text-align:left;gap:6px}}
+:root{color-scheme:dark;--bg:#08111f;--card:#111c2e;--card2:#16243a;--line:#263a55;--text:#eef6ff;--muted:#a7b6c8;--blue:#58c7ff;--green:#7ee787;--lime:#b6ff00;--red:#ff8798}*{box-sizing:border-box}body{margin:0;background:linear-gradient(#07101c,var(--bg));color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}.app{max-width:900px;margin:auto;padding:18px 14px 28px}header,.row{display:flex;align-items:center;justify-content:space-between;gap:12px}h1{font-size:1.55rem;margin:0}h2{font-size:1.05rem;margin:0}.muted{color:var(--muted);font-size:.86rem}.search,.panel,.install-panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-top:14px}.install-panel{border-color:#3c6d8b;background:linear-gradient(135deg,#10243a,#0d1b2d)}.install-title{font-weight:900;font-size:1.05rem}.install-copy{color:var(--muted);font-size:.84rem;margin-top:4px;line-height:1.4}.install-button{width:100%;margin-top:10px;background:var(--blue);color:#04111a;font-weight:900;font-size:1rem;padding:14px}.search{display:grid;grid-template-columns:1fr auto;gap:10px}input,button{font:inherit;border-radius:12px}input{min-width:0;background:#091421;color:var(--text);border:1px solid var(--line);padding:13px 14px;outline:none}input:focus{border-color:var(--blue)}button{border:0;background:var(--blue);color:#04111a;font-weight:800;padding:12px 14px}.secondary,.chip{background:var(--card2);color:var(--text);border:1px solid var(--line)}.remove{background:#4a1f28;color:#ffd9df;border:1px solid #7f3442}.results{grid-column:1/-1;display:none;background:#0a1524;border:1px solid var(--line);border-radius:12px;overflow:hidden}.result{display:block;width:100%;text-align:left;border-radius:0;background:transparent;color:var(--text);border-bottom:1px solid var(--line)}.result:last-child{border-bottom:0}.saved{display:flex;gap:8px;overflow-x:auto;margin-top:8px}.chip{flex:0 0 auto}.hidden{display:none!important}.status{color:var(--muted);min-height:1.3em;margin-top:12px}.location{font-size:1.3rem;font-weight:900}.current{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.now{display:flex;align-items:center;gap:12px}.icon{font-size:3rem}.temp{font-size:2.4rem;font-weight:900;line-height:1}.condition{font-weight:800;margin-top:5px}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric,.hour,.day{background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:10px}.metric b{display:block}.metric span{font-size:.78rem;color:var(--muted)}.alerts .alert{background:#351a20;border:1px solid #7c3342;border-radius:13px;padding:11px;margin-top:9px}.alert b{color:#ffd7de}.alert p{font-size:.88rem;line-height:1.35}.good{color:var(--green);font-weight:800}.hourly{display:flex;gap:9px;overflow-x:auto;padding-bottom:5px}.hour{min-width:118px}.hour .wi{font-size:1.7rem;margin:5px 0}.small{font-size:.76rem;color:var(--muted);line-height:1.4}.days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.day{text-align:center}.day .wi{font-size:1.8rem;margin:5px 0}.note{font-size:.76rem;color:var(--muted);line-height:1.4;margin-top:9px}.source-footer{text-align:center;margin-top:16px}.brand-footer{margin-top:18px;padding:13px 14px;border:1px solid rgba(182,255,0,.28);border-radius:18px;background:linear-gradient(135deg,rgba(182,255,0,.08),rgba(182,255,0,.025));display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 0 22px rgba(182,255,0,.08)}.brand-photo{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid var(--lime);box-shadow:0 0 12px rgba(182,255,0,.7);flex:0 0 auto}.brand-name{font-weight:1000;letter-spacing:.045em;font-size:clamp(1.05rem,5vw,1.65rem);color:var(--lime);text-shadow:0 0 5px rgba(182,255,0,.95),0 0 14px rgba(182,255,0,.5);text-align:center}.brand-sub{font-size:.66rem;color:var(--muted);text-align:center;margin-top:2px}@media(max-width:680px){.current{grid-template-columns:1fr}.days{grid-template-columns:1fr}.day{display:grid;grid-template-columns:65px 50px 1fr 1fr;align-items:center;text-align:left;gap:6px}.brand-photo{width:48px;height:48px}}
 </style>
 </head>
 <body>
@@ -19,9 +19,8 @@
 
 <section id="installPanel" class="install-panel hidden">
 <div class="install-title">Install Simple Weather</div>
-<div id="installCopy" class="install-copy">Put Simple Weather on your home screen as its own app with the cloud-and-sun icon.</div>
+<div id="installCopy" class="install-copy">Install Simple Weather on this device with the cloud-and-sun app icon.</div>
 <button id="installApp" class="install-button">Install Weather App</button>
-<div id="installHelp" class="install-help"></div>
 </section>
 
 <section class="search"><input id="city" placeholder="Enter city, e.g. Beverly, MA" autocomplete="off"><button id="go">Search</button><div id="results" class="results"></div></section>
@@ -32,31 +31,33 @@
 <section class="panel"><div class="row"><h2>Weather alerts</h2><span id="alertSource" class="muted"></span></div><div id="alerts" class="alerts"></div><div class="note">Official U.S. watches, warnings and advisories come from the National Weather Service. This app does not invent tornado or hurricane percentages when an authoritative source has not published one.</div></section>
 <section class="panel"><div class="row"><h2>Next 24 hours</h2><span class="muted">Swipe sideways</span></div><div id="hourly" class="hourly" style="margin-top:10px"></div></section>
 <section class="panel"><h2>5-day forecast</h2><div id="days" class="days" style="margin-top:10px"></div></section>
-<div class="note footer">Forecast: Open-Meteo • U.S. alerts: National Weather Service</div>
+<div class="note source-footer">Forecast: Open-Meteo • U.S. alerts: National Weather Service</div>
 </div>
+
+<footer class="brand-footer" aria-label="Drawz Productions">
+<img class="brand-photo" src="/simple-weather/drawz-owner.jpg" alt="Drawz Productions">
+<div><div class="brand-name">DRAWZ PRODUCTIONS</div><div class="brand-sub">Simple Weather</div></div>
+</footer>
 </main>
 <script>
 const $=id=>document.getElementById(id),state={loc:null,data:null};
 let installPrompt=null;
 const installed=()=>window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
 function updateInstallUI(){
-  const panel=$("installPanel"),btn=$("installApp"),copy=$("installCopy"),help=$("installHelp");
-  if(installed()||!installPrompt){
-    panel.classList.add("hidden");
-    help.style.display="none";
-    return;
-  }
-  panel.classList.remove("hidden");
-  btn.textContent="Install Weather App";
-  btn.disabled=false;
-  copy.textContent="Install Simple Weather on this device with the cloud-and-sun app icon.";
+  const panel=$("installPanel");
+  panel.classList.toggle("hidden",installed()||!installPrompt);
+}
+function countSuccessfulInstall(){
+  try{
+    const pixel=new Image();
+    pixel.src="https://counterapi.com/pixel.gif?ns=drawzappstudio.github.io&action=install&key=simple-weather&unique=true&_="+Date.now();
+  }catch(e){}
 }
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;updateInstallUI()});
-window.addEventListener('appinstalled',()=>{installPrompt=null;updateInstallUI()});
+window.addEventListener('appinstalled',()=>{countSuccessfulInstall();installPrompt=null;updateInstallUI()});
 $("installApp").addEventListener('click',async()=>{
   if(!installPrompt||installed()){updateInstallUI();return}
-  const prompt=installPrompt;
-  installPrompt=null;
+  const prompt=installPrompt;installPrompt=null;
   await prompt.prompt();
   await prompt.userChoice;
   updateInstallUI();
