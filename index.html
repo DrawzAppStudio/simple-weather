@@ -17,7 +17,7 @@
 <main class="app">
 <header><div><h1>Simple Weather</h1><div class="muted">5 days • next 24 hours • saved cities • U.S. alerts</div></div><button id="refresh" class="secondary hidden">Refresh</button></header>
 
-<section id="installPanel" class="install-panel">
+<section id="installPanel" class="install-panel hidden">
 <div class="install-title">Install Simple Weather</div>
 <div id="installCopy" class="install-copy">Put Simple Weather on your home screen as its own app with the cloud-and-sun icon.</div>
 <button id="installApp" class="install-button">Install Weather App</button>
@@ -40,31 +40,26 @@ const $=id=>document.getElementById(id),state={loc:null,data:null};
 let installPrompt=null;
 const installed=()=>window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
 function updateInstallUI(){
-  const panel=$("installPanel"),btn=$("installApp"),copy=$("installCopy");
-  if(installed()){
-    btn.textContent="Installed";btn.disabled=true;copy.textContent="Simple Weather is installed on this device.";
-  }else if(installPrompt){
-    btn.textContent="Install Weather App";btn.disabled=false;copy.textContent="Ready to install with the cloud-and-sun app icon.";
-  }else{
-    btn.textContent="Install Weather App";btn.disabled=false;copy.textContent="Tap the button. If Chrome is ready, its install window will open.";
-  }
-}
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;updateInstallUI()});
-window.addEventListener('appinstalled',()=>{installPrompt=null;updateInstallUI();$("installHelp").style.display="none"});
-$("installApp").addEventListener('click',async()=>{
-  const help=$("installHelp");
-  if(installed()){updateInstallUI();return}
-  if(installPrompt){
-    installPrompt.prompt();
-    const choice=await installPrompt.userChoice;
-    installPrompt=null;
-    help.style.display="block";
-    help.textContent=choice.outcome==="accepted"?"Installation started. Look for the cloud-and-sun Weather icon on your home screen.":"Installation was canceled. You can press Install Weather App again later.";
-    updateInstallUI();
+  const panel=$("installPanel"),btn=$("installApp"),copy=$("installCopy"),help=$("installHelp");
+  if(installed()||!installPrompt){
+    panel.classList.add("hidden");
+    help.style.display="none";
     return;
   }
-  help.style.display="block";
-  help.innerHTML="Chrome has not offered the native install prompt yet. First remove the old gray Weather shortcut with the small Chrome badge. Then close Chrome completely, reopen this page, wait a few seconds, and press <b>Install Weather App</b> again. If Chrome still does not offer installation, open Chrome's ⋮ menu and look specifically for <b>Install app</b>.";
+  panel.classList.remove("hidden");
+  btn.textContent="Install Weather App";
+  btn.disabled=false;
+  copy.textContent="Install Simple Weather on this device with the cloud-and-sun app icon.";
+}
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;updateInstallUI()});
+window.addEventListener('appinstalled',()=>{installPrompt=null;updateInstallUI()});
+$("installApp").addEventListener('click',async()=>{
+  if(!installPrompt||installed()){updateInstallUI();return}
+  const prompt=installPrompt;
+  installPrompt=null;
+  await prompt.prompt();
+  await prompt.userChoice;
+  updateInstallUI();
 });
 
 const WX={0:["Clear sky","☀️"],1:["Mostly clear","🌤️"],2:["Partly cloudy","⛅"],3:["Overcast","☁️"],45:["Fog","🌫️"],48:["Fog","🌫️"],51:["Light drizzle","🌦️"],53:["Drizzle","🌦️"],55:["Heavy drizzle","🌧️"],56:["Freezing drizzle","🌧️"],57:["Freezing drizzle","🌧️"],61:["Light rain","🌦️"],63:["Rain","🌧️"],65:["Heavy rain","🌧️"],66:["Freezing rain","🌧️"],67:["Freezing rain","🌧️"],71:["Light snow","🌨️"],73:["Snow","🌨️"],75:["Heavy snow","❄️"],77:["Snow grains","❄️"],80:["Rain showers","🌦️"],81:["Rain showers","🌧️"],82:["Heavy showers","⛈️"],85:["Snow showers","🌨️"],86:["Heavy snow showers","❄️"],95:["Thunderstorm","⛈️"],96:["Thunderstorm / hail","⛈️"],99:["Severe thunderstorm / hail","⛈️"]};
