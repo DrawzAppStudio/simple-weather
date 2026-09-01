@@ -1,0 +1,1 @@
+After GitHub Pages is enabled, open the HTTPS site in Chrome and use Install app or Add to Home screen.
