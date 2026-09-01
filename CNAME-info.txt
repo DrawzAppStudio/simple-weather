@@ -1,0 +1,1 @@
+Default GitHub Pages URL will be https://drawzappstudio.github.io/simple-weather/
