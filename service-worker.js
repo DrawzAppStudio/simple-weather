@@ -1,5 +1,5 @@
-const CACHE="simple-weather-v5";
-const SHELL=["/simple-weather/","/simple-weather/index.html","/simple-weather/manifest.json","/simple-weather/icon-192.png","/simple-weather/icon-512.png"];
+const CACHE="simple-weather-v6";
+const SHELL=["/simple-weather/","/simple-weather/index.html","/simple-weather/manifest.json","/simple-weather/icon-192.png","/simple-weather/icon-512.png","/simple-weather/drawz-owner.jpg"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)));self.skipWaiting()});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
-self.addEventListener("fetch",e=>{if(e.request.method!=="GET")return;const u=new URL(e.request.url);if(u.hostname.includes("open-meteo.com")||u.hostname.includes("weather.gov"))return;e.respondWith(fetch(e.request).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r}).catch(()=>caches.match(e.request))) });
+self.addEventListener("fetch",e=>{if(e.request.method!=="GET")return;const u=new URL(e.request.url);if(u.hostname.includes("open-meteo.com")||u.hostname.includes("weather.gov")||u.hostname.includes("counterapi.com"))return;e.respondWith(fetch(e.request).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r}).catch(()=>caches.match(e.request))) });
