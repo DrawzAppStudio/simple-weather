@@ -1,0 +1,1 @@
+Icon SVGs are present for the PWA.
