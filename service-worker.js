@@ -1,4 +1,4 @@
-const CACHE="simple-weather-v4";
+const CACHE="simple-weather-v5";
 const SHELL=["/simple-weather/","/simple-weather/index.html","/simple-weather/manifest.json","/simple-weather/icon-192.png","/simple-weather/icon-512.png"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)));self.skipWaiting()});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
